@@ -2,20 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>7 Day Forecast Machine</title>
+
+<!--CSS Normalize-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+<!--CSS Materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+<!--CSS My Style-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+<!--JS JQ-->
+    <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
+<!--JS JSCharts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<!--JS Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<!--JS My App-->
+    <script src="js/app.js"></script>
+
 </head>
 <body>
-    <form id="search-term">
-        <input type="text" id="queryCt">
-        <input type="text" id="querySt">
-        <button type="submit">Submit</button>
-    </form>
+<div id="wrapper">
+    <div id="headcontainer">
+        <div class="spacer"></div>
+        <div id="header">
+            <h1>7 Day Forecast Machine</h1>    
+            <form id="search-term">
+                <div class="input-field">
+                    <input class="validate "type="text" id="queryCt">
+                    <label for="queryCt">City</label>   
+                </div>
+                <div class="input-field">
+                    <input class="validate" type="text" id="querySt">
+                    <label for="querySt">State</label>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+<!--                <button type="submit">Submit</button>-->
+            </form>
+        </div>
+        <div class="spacer"></div>
+    </div>
+    
     <div id="search-results"></div>
 
+   
     <canvas id="myLineChart"></canvas>
     
+    
+    
+    
+    
+    
+</div>
 </body>
-<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
-<script src="scripts/app.js"></script>
 </html>
