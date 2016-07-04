@@ -4,17 +4,17 @@ $(function(){
         var searchTermSt = $('#querySt').val();
         var searchTermCt = $('#queryCt').val();
         getRequest(searchTermSt, searchTermCt);
-        console.log(searchTermSt, searchTermCt);
+//        console.log(searchTermSt, searchTermCt);
     })
 });
 
 function getRequest(searchTermSt, searchTermCt){
     url = 'http://api.wunderground.com/api/b06248e550ec9f58/forecast10day/q/' + searchTermSt + '/' + searchTermCt + '.json';
-    console.log(url);
+//    console.log(url);
     $.getJSON(url, function(data){
-        console.log(data);
+//        console.log(data);
         showResults(data.forecast.simpleforecast.forecastday);
-        console.log(data.forecast.simpleforecast.forecastday);
+//        console.log(data.forecast.simpleforecast.forecastday);
     });
 }
 
@@ -27,8 +27,9 @@ function showResults(results){
         lows.push(value.low.fahrenheit);
         dates.push("'" + value.date.month + "/" + value.date.day + ", " + value.date.weekday_short + "'")
     })
-    console.log(highs,lows,dates);
+//    console.log(highs,lows,dates);
     chart(highs,lows,dates);
+    $('#myLineChart').fadeIn(1000);
 }
 
 //CHARTS
@@ -37,13 +38,13 @@ var data = {
     labels: dates,
     datasets: [
         {
-            label: "My First dataset",
+            label: "High",
             fill: false,
-            backgroundColor: "rgba(255,205,86,0.4)",
-            borderColor: "rgba(255,0,0,1)",
-            pointBorderColor: "rgba(255,205,86,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
+            backgroundColor: "#f44336",
+            borderColor: "#d50000",
+            pointBorderColor: "#212121",
+            pointBackgroundColor: "#bf360c",
+            pointBorderWidth: 3,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: "rgba(255,205,86,1)",
             pointHoverBorderColor: "rgba(255,205,86,1)",
@@ -51,13 +52,13 @@ var data = {
             data: highs
         },
         {
-            label: "My Second dataset",
+            label: "Low",
             fill: false,
-            backgroundColor: "rgba(255,205,86,0.4)",
-            borderColor: "rgba(0,0,255,1)",
-            pointBorderColor: "rgba(255,205,86,1)",
-            pointBackgroundColor: "#fff",
-            pointBorderWidth: 1,
+            backgroundColor: "00b0ff",
+            borderColor: "#2962ff",
+            pointBorderColor: "#0d47a1",
+            pointBackgroundColor: "#212121",
+            pointBorderWidth: 3,
             pointHoverRadius: 5,
             pointHoverBackgroundColor: "rgba(255,205,86,1)",
             pointHoverBorderColor: "rgba(255,205,86,1)",
